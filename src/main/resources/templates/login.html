@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Form</title>
+	<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+	<header>
+		<img src="https://scontent.fhyd2-1.fna.fbcdn.net/v/t39.30808-6/335309907_595406415810993_4941392533652171053_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=chrWmdbWRJwAX_G-WDj&_nc_ht=scontent.fhyd2-1.fna&oh=00_AfD3e4dCKQLFIBtuaXbtB2i3yoH_u01T5VrT7h1LNGAaWA&oe=655E7D58"
+			alt="Header Image">
+
+	</header>
+	<h2>Login</h2>
+	<form th:action="@{/login}" method="post">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required>
+		<br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+		<br>
+		<button type="submit">Login</button>
+	</form>
+	<footer>
+		<p>&copy; 2023 INDUS International School, Hyderabad</p>
+	</footer>
+</body>
+
+</html>

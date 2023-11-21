@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Form</title>
+	<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+	<header>
+		<img th:src="@{/images/logo.jpg}" alt="Logo Image">
+
+
+	</header>
+
+
+	<!-- submit.html -->
+	<form action="/submit" method="post" enctype="multipart/form-data" th:action="@{/submit}" th:object="${student}">
+
+		<h2>Student Information Form</h2>
+		<!-- Student ID -->
+		<label for="studentId">Student ID:</label>
+		<select id="studentId" name="studentId" required>
+			<option value="1">Kayva-1</option>
+			<option value="2">Navya-2</option>
+			<option value="3">Sravya-3</option>
+			<option value="4">Katya-4</option>
+			<!-- Add more options as needed -->
+		</select>
+		<br>
+
+		<!-- Year -->
+		<label for="year">Year:</label>
+		<select id="year" name="year" required>
+			<option value="2020">2020</option>
+			<option value="2021">2021</option>
+			<option value="2022">2022</option>
+			<option value="2023">2023</option>
+			<!-- Add more options as needed -->
+		</select>
+		<br>
+
+		<!-- Subject -->
+		<label for="subject">Subject:</label>
+		<select id="subject" name="subject" required>
+			<option value="English">English</option>
+			<option value="Social">Social</option>
+			<option value="Physics">Physics</option>
+			<option value="Math">Math</option>
+			<option value="Science">Science</option>
+			<!-- Add more options as needed -->
+		</select>
+		<br>
+
+		<!-- Term -->
+		<label for="term">Term:</label>
+		<select id="term" name="term" required>
+			<option value="First Term">First Term</option>
+			<option value="Second Term">Second Term</option>
+			<option value="Third Term">Third Term</option>
+			<option value="Fourth Term">Fourth Term</option>
+			<!-- Add more options as needed -->
+		</select>
+		<br>
+
+		<!-- File Upload -->
+		<label for="file">Upload Excel File:</label>
+		<input type="file" id="file" name="file" accept=".xlsx, .xls" required>
+		<br>
+
+		<!-- Submit Button -->
+		<button type="submit">Generate Analysis</button>
+
+	</form>
+	<form th:action="@{/logout}" method="post">
+
+		<button type="submit">Logout</button>
+
+	</form>
+
+
+
+
+	<footer>
+		<p>&copy; 2023 INDUS International School, Hyderabad </p>
+	</footer>
+</body>
+
+</html>

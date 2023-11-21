@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Form</title>
+	<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+	<header>
+		<img th:src="@{/images/logo.jpg}" alt="INDUS Logo">
+	</header>
+
+	<form action="/submit" method="post" enctype="multipart/form-data" th:action="@{/submit}" th:object="${student}">
+
+		<h2>Student Analysis</h2>
+
+
+		<label for="studentId">Student ID:</label>
+		<div class="styled-text-field">
+			<input type="text" id="studentId" name="studentId" required th:field="*{studentId}" readonly />
+		</div>
+		<br>
+
+	
+		<label for="year">Year:</label>
+		<div class="styled-text-field">
+			<input type="text" id="year" name="year" required th:field="*{year}" readonly />
+		</div>
+		<br>
+
+		<label for="subject">Subject:</label>
+		<div class="styled-text-field">
+			<input type="text" id="subject" name="subject" required th:field="*{subject}" readonly />
+		</div>
+		<br>
+
+		<label for="term">Term:</label>
+		<div class="styled-text-field">
+			<input type="text" id="term" name="term" required th:field="*{term}" readonly />
+		</div>
+		<br>
+
+
+
+
+
+	</form>
+
+
+
+	<table border="3">
+		<thead border="3">
+			<tr>
+				<th>STUDENT ID</th>
+				<th>STUDENT NAME</th>
+				<th>CLIENT NAME</th>
+				<th>SKILLS</th>
+				<th>EOD</th>
+				<th>REPLACEMENT</th>
+				<!-- Add more columns as needed -->
+			</tr>
+		</thead>
+		<tbody border="3">
+			<!-- Loop through rows and cells to display Excel content -->
+			<tr th:each="row : ${excelData}">
+				<td th:each="cell : ${row}" th:text="${cell}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form th:action="@{/logout}" method="post">
+		<button type="submit">Logout</button>
+	</form>
+
+	<form th:action="@{/}" method="get">
+		<button type="submit">Back</button>
+	</form>
+
+	<footer>
+		<p>&copy; 2023 INDUS International School, Hyderabad</p>
+	</footer>
+
+
+
+</html>
